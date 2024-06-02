@@ -1,0 +1,79 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-item {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative; /* Required for button positioning */
+  padding-top: 30px; /* Adjust spacing for buttons */
+}
+
+.news-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.news-body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.button-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.news-item .btn {
+  font-size: 12px;
+}
+
+.cross-container {
+  width: 50px; /* Increased width */
+  height: 50px; /* Increased height */
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cross {
+  width: 30px; /* Increased width */
+  height: 30px; /* Increased height */
+  position: relative;
+}
+
+.cross::before,
+.cross::after {
+  content: '';
+  position: absolute;
+  width: 4px; /* Increased thickness */
+  height: 30px; /* Adjusted height */
+  background-color: black;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cross::before {
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.cross-container:hover .cross::before,
+.cross-container:hover .cross::after {
+  transform: translateX(-50%) rotate(45deg);
+  transition: transform 0.3s ease;
+}
