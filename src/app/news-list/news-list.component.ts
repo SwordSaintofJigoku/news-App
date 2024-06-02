@@ -27,9 +27,9 @@ export class NewsListComponent implements OnInit {
 
   deletePost(Id: number): void {
 
-    this._toastrService.showToast('Deleted Successfully');
+    
     this.newsService.deletePost(Id).subscribe(response => {
-      alert("Deleted Successfully")
+      this._toastrService.showToast('Deleted Successfully');
       setTimeout(() => {
         this.ngOnInit()
       },
